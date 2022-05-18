@@ -1,0 +1,52 @@
+{
+  "bsonType": "object",
+  "properties": {
+    "_id": {
+      "bsonType": "objectId"
+    },
+    "_partition": {
+      "bsonType": "string"
+    },
+    "name": {
+      "bsonType": "string"
+    },
+    "kart": {
+      "bsonType": "int"
+    },
+    "race_type": {
+      "bsonType": "string"
+    },
+    "race_group": {
+      "bsonType": "string"
+    },
+    "start_position": {
+      "bsonType": "int"
+    },
+    "finish_position": {
+      "bsonType": "int"
+    },
+    "best_lap": {
+      "bsonType": "double"
+    },
+    "average_lap": {
+      "bsonType": "double"
+    },
+    "race_issue": {
+      "bsonType": "boolean"
+    },
+    "race_comments": {
+      "bsonType": "string"
+    },
+    "race_date": {
+      "bsonType": "string"
+    },
+    "new_column": {
+      "bsonType": "string"
+    },
+    "test_column": {
+      "bsonType": "string"
+    }
+  },
+  "required": ["_id", "_partition", "name", "race_type", "best_lap"],
+  "title": "Race"
+}
