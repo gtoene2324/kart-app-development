@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import LoginScreen from "./components/LoginScreen";
+import KartTrackApp from "./KartTrackApp";
+import RealmApolloProvider from "./graphql/RealmApolloProvider";
+import { useRealmApp, RealmAppProvider } from "./RealmApp";
 
-function App() {
+// APP_ID is taken from the Realm Atlas app UI
+export const APP_ID = "kart-tracker-fplzt";
+
+const RequireLogginInUser = ({ children }) => {
+  //Only render children if there's a logged in user
+  const app = useRealmApp();
+  //TODO - build login screen
+  return app.currentUser ? children : <LoginScreen />;
+};
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RealmAppProvider appId={APP_ID}>
+      <RequireLoggedInUser>
+        <RealmApolloProvider>
+          <KartTrackingApp />
+        </RealmApolloProvider>
+      </RequireLoggedInUser>
+    </RealmAppProvider>
   );
 }
-
-export default App;
