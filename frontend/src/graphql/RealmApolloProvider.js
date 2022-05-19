@@ -1,4 +1,9 @@
 import React from "react";
+/*
+ export a React component that provides the ApolloClient object instantiate the client
+ client connects to the app's GraphQL API
+*/
+
 import { useRealmApp } from "../RealmApp";
 import {
   ApolloClient,
@@ -7,7 +12,9 @@ import {
   ApolloProvider,
 } from "@apollo/client";
 
-//Create an ApolloClient component that connects to the provided Realm.App's GraphQL API
+/*The createRealmApolloClient() function  instantiates a client object
+ Every GraphQL request must include an Authorization header that specifies a valid user access token. Specify the auth header, so that requests won't fail. 
+*/
 const createRealmApolloClient = (app) => {
   const link = new HttpLink({
     // Realm apps use a GraphQl endpoint, identified by an App ID
@@ -32,7 +39,7 @@ const createRealmApolloClient = (app) => {
   return new ApolloClient({ link, cache });
 };
 
-// exporting the component
+// Instantiate the component
 export default function RealmApolloProvider({ children }) {
   const app = useRealmApp();
   const [client, setClient] = React.useState(createRealmApolloClient(app));
