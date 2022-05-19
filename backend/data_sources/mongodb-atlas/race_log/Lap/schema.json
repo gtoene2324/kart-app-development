@@ -1,0 +1,32 @@
+{
+  "bsonType": "object",
+  "properties": {
+    "_id": {
+      "bsonType": "objectId"
+    },
+    "_partition": {
+      "bsonType": "string"
+    },
+    "race_id": {
+      "bsonType": "int"
+    },
+    "driver_name": {
+      "bsonType": "string"
+    },
+    "lap_number": {
+      "bsonType": "int"
+    },
+    "lap_time": {
+      "bsonType": "double"
+    }
+  },
+  "required": [
+    "_id",
+    "_partition",
+    "driver_name",
+    "race_id",
+    "race_date",
+    "lap_time"
+  ],
+  "title": "Lap"
+}
