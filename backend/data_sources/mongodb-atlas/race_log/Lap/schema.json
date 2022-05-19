@@ -25,7 +25,7 @@
     "_partition",
     "driver_name",
     "race_id",
-    "race_date",
+    "lap_number",
     "lap_time"
   ],
   "title": "Lap"
