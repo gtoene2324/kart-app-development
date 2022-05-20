@@ -1,1 +1,7 @@
-{}
+{
+  "race_id": {
+    "ref": "#/relationship/mongodb-atlas/race_log/Lap",
+    "foreignKey": "race_id",
+    "isList": false
+  }
+}

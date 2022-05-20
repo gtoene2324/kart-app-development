@@ -3,11 +3,14 @@ import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 //import { useRealmApp } from "./RealmApp";
 import RaceTable from "./components/RaceTable";
+import LoginScreen from "./components/LoginScreen";
 
 export default function KartTrackApp() {
   return (
     <Container>
-      <RaceTable css={gridAreaMain} />
+      {/* <LoginScreen /> */}
+      {/* <RaceTable css={gridAreaMain} /> */}
+      TODO insert table component to show races for the logged in user
     </Container>
   );
 }

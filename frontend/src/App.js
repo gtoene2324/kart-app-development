@@ -8,7 +8,6 @@ import LoginScreen from "./components/LoginScreen";
 import KartTrackApp from "./KartTrackApp";
 import RealmApolloProvider from "./graphql/RealmApolloProvider";
 import { useRealmApp, RealmAppProvider } from "./RealmApp";
-import KartImage from "./Assets/kart.png";
 
 // APP_ID is taken from the Realm Atlas app UI
 export const APP_ID = "kart-tracker-fplzt";
@@ -24,9 +23,7 @@ export default function App() {
     <RealmAppProvider appId={APP_ID}>
       <RequireLoggedInUser>
         <RealmApolloProvider>
-          Hi Dave. We know what we're doing. :)
-          {/* <KartImage /> */}
-          {/* <KartTrackApp /> */}
+          <KartTrackApp />
         </RealmApolloProvider>
       </RequireLoggedInUser>
     </RealmAppProvider>
